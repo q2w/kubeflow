@@ -55,7 +55,9 @@ local ROLE_WORKER = "worker";
   volumes(params):: [
     {
       name: "openmpi-data",
-      emptyDir: {},
+      hostPath: {
+        path: "/mnt/glusterfs/horovod_pgm"
+      },
     },
     {
       name: "openmpi-secrets",
