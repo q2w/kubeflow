@@ -56,7 +56,7 @@ local ROLE_WORKER = "worker";
     {
       name: "openmpi-data",
       hostPath: {
-        path: "/mnt/glusterfs/horovod_pgm",
+        path: "/home/app/abhishek",
       },
     },
     {
