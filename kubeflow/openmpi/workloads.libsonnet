@@ -55,8 +55,12 @@ local ROLE_WORKER = "worker";
   volumes(params):: [
     {
       name: "openmpi-data",
+      emptyDir: {},
+    },
+    {
+      name: "openmpi-pgm",
       hostPath: {
-        path: "/mnt/glusterfs/horovod_pgm",
+        path: "/mnt/glusterfs/horovod_pgm/examples",
       },
     },
     {
@@ -125,6 +129,10 @@ local ROLE_WORKER = "worker";
         {
           name: "openmpi-data",
           mountPath: "/kubeflow/openmpi/data",
+        },
+        {
+          name: "openmpi-pgm",
+          mountPath: "/kubeflow/openmpi/data/horovod_pgm",
         },
         {
           name: "openmpi-assets",
