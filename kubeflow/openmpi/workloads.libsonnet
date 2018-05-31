@@ -158,6 +158,10 @@ local ROLE_WORKER = "worker";
           name: "openmpi-data",
           mountPath: "/kubeflow/openmpi/data",
         },
+        {
+          name: "openmpi-pgm",
+          mountPath: "/kubeflow/openmpi/data/horovod_pgm",
+        },
       ],
     },
 
